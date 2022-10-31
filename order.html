@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Online</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style-main.css">
+  </head>
+<body>
+  <!--Sidebarr-->
+	
+	<div class="sidebar">
+		<a class="active" href="Homepage.html">Home</a>
+		<a href="order.html">Order Online</a>
+		<a href="Meeting.html">Book Meeting</a>
+		<a href="Events.html">Major Events</a>
+		<a href="#celeb">Celebrations</a>
+		<a href="#wedding">Weddings</a>
+		<a href="#about">About Us</a>
+		<a href="#contact">Contact Us</a>
+		<a href="#reviews">Reviews</a>
+	  </div>
+
+    <div class="order-container">
+      <h1>Order Online</h1>
+    <section class="form-sec">
+      <form method="post" action="">      
+        <fieldset>      
+            <legend class="equip">Choose Equipment To Hire:</legend>      
+            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 40m x 30m) X
+            <input type="text" id="tentItems" name="tentItems1"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 30m x 30m) X
+            <input type="text" id="tentItems" name="tentItems2"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 30m x 20m) X
+            <input type="text" id="tentItems" name="tentItems3"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 24m x 15m) X
+            <input type="text" id="tentItems" name="tentItems4"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents ( 18m x 9m) X
+            <input type="text" id="tentItems" name="tentItems5"><br>        
+            <input type="checkbox" name="equipment" value="tables">Tables X
+            <input type="text" id="tableItems" name="tableItems"><br>      
+            <input type="checkbox" name="equipment" value="chairs">Chairs X
+            <input type="text" id="chairItems" name="chairItems"><br>
+            <input type="checkbox" name="equipment" value="cutlery">Crockery & Cutlery (Set) X
+            <input type="text" id="cutleryItems" name="cutleryItems"><br>   
+            <br>
+            </fieldset>
+            <fieldset>
+              <legend>Fuction Type:</legend> 
+            <select name="function">
+              <option value="choose" >--Select Function Size--</option>
+              <option value="small">Small</option>
+              <option value="large">Large</option>
+            </select>   
+                 
+        </fieldset> 
+        <fieldset>
+          <legend>Special Prerequisities:</legend>
+          <p><span class="notice">*</span>Each special requsities are charged at a fee subject to VAT.</p>
+          <input  type="checkbox" name="other" value="standa">Exhibition Stands<br>      
+          <input type="checkbox" name="other" value="flowers">Flower Arrangements<br>      
+          <input type="checkbox" name="other" value="logitics">Other Logistics for Event<br>
+          <textarea id="txtOther" name="txtOther" rows="5" cols="50" placeholder="Specify other logistics for event..."></textarea>
+          </textarea>
+        </fieldset> 
+        <br>
+        <fieldset>
+          <legend>Total Cost:</legend>
+          <input type="text" id="cost" name="cost">
+        </fieldset>
+        <br>
+        <input type="submit" value="Submit now" />     
+    </form>
+    </section>
+    6
+    </div>
+    
+</body>
+</html>

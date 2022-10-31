@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Gallery</title>
+	
+	
+	</head>
+	
+	
+	<style>
+	ul li {
+	float: middle;
+	width: 200px;
+	height: 40px;
+	background-color: lightgrey;
+	opacity: .9;
+	line-height: 10px;
+	text-align: center;
+	font-size: 18px;
+	margin-left: 10px;
+}
+		body {
+	background-color: white;
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+		
+	
+	ul{
+	list-style-type: none;
+	margin: 40;
+	padding: 20;
+	overflow:hidden;
+	background-color:
+	}
+	
+	li{
+	float: left;
+	}
+	
+	li a{
+	display: block;
+	color: Black;
+	text-align:center;
+	padding: 14px 16px;
+	text-decoration: none;
+	}
+	
+	.image-grid{
+		--gap: 16px;
+		--num-cols:4;
+		--row-height: 300px;
+
+		box-sizing: border-box;
+		padding:var(--gap);
+
+		display: grid;
+		grid-template-columns: repeat(var(--num-cols), 1fr);
+		grid-auto-rows: var(--row-height);
+		gap:var(--gap);
+	}
+	.image-grid > img{
+		width: 92%;
+		height: 92%;
+		object-fit: cover;
+	}
+	.image-grid-col-2{
+		grid-column: span 2;
+	}
+	.image-grid-row-2{
+		grid-row: span 2;
+	}
+	@media screen and (max-width: 1024px){
+		.image-grid{
+			--num-cols: 2;
+			--row-height: 200px;
+		}
+	}
+	</style>
+	
+	</head>
+	
+	<body >
+</hr>
+	<ul>
+	<li><a href = "homepage.html">Home</a></li>
+	<li><a href = "Profile.html">Profile</a></li>
+	<li><a href = "Our Work.html">Our Work</a></li>
+	<li><a href = "Gallery.html">Gallery</a></li>
+	<li><a href = "Reviews.html">Reviews</a></li>
+	<li><a href = "Contact Us.html">Contact Us</a></li>
+	</ul>
+	</li>
+<ul>
+     <div class="image-grid">
+		<img src="1.jpg" alt ="architecture">
+		<img src="2.jpg" alt ="architecture">
+		<img src="3.jpg" alt ="architecture">
+		<img src="4.jpg" alt ="architecture">
+		<img src="5.jpg" alt ="architecture">
+		<img src="7.jpg" alt ="architecture">
+		<img src="8.jpg" alt ="architecture">
+
+
+
+	 </div>
+	
+		
+	
+	
+	</body>
+<hr/>
+	
+	
+	<footer>
+	
+	
+	
+	</footer>
+
+
+
+</html>
