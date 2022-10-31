@@ -1,5 +1,5 @@
 <?php 
-    include 'db.php';
+    //include 'db.php';
 
     //declaring database credentials
 $servername = "localhost";
@@ -35,6 +35,16 @@ $query = "CREATE TABLE login(
     login_id VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
     password VARCHAR(100) NOT NULL, 
-    CONSTRAINT PK_log_id PRIMARY KEY(login_id),
+    CONSTRAINT PK_log_id PRIMARY KEY(login_id)
 )";
+
+if(mysqli_query($mysqli,$query)){
+    echo nl2br("Table login created successfully\r\n");
+
+}else{
+    echo nl2br("Error creating table login: \r\n"). @mysqli_error($mysqli);
+} 
+
+//Closing the connection
+mysqli_close($mysqli)
 ?>

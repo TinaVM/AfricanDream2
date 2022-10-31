@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,19 +27,19 @@
     <div class="meet-container">
         <h1>Book Meeting</h1>
         <section class="form-sec">
-            <form>
+            <form action="insert.php" method="POST">
                 <div class="form-group">
                   <label for="emailAddress">Email address</label>
-                  <input type="email" class="form-control" id="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" name="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                   <label for="phoneNumber">Phone Number</label>
-                  <input type="tel" class="form-control" id="phoneNumber" placeholder="Enter Phone Number">
+                  <input type="tel" class="form-control" name="phoneNumber" placeholder="Enter Phone Number">
                 </div>
                 <div class="form-group">
                   <label for="contact">Contact Person</label>
-                  <input type="text" class="form-control" id="contact" placeholder="Add Attendee">
+                  <input type="text" class="form-control" name="contact" placeholder="Add Attendee">
                 </div>
                 <div class="form-group">
                   <label for="place">Location</label>
@@ -49,16 +50,16 @@
                     <option value="Other">Other</option>
                   </select>
                   <small id="platform" class="form-text text-muted">If 'Online' selected, please pick platform:</small>
-                  <input type="radio" id="zoom" name="platform-spec" value="Zoom">
+                  <input type="radio" id="zoom" name="platform" value="Zoom">
                   <label for="zoom">Zoom</label><br>
-                  <input type="radio" id="teams" name="platform-spec" value="Microsoft Teams">
+                  <input type="radio" id="teams" name="platform" value="Microsoft Teams">
                   <label for="teams">Teams</label><br>
-                  <input type="radio" id="google" name="platform-spec" value="Google Meets">
+                  <input type="radio" id="google" name="platform" value="Google Meets">
                   <label for="google">Google Meets</label><br>
                 </div>
                 <div class="form--group">
                   <label for="pickDate">Pick A Date</label>
-                  <input type="date" id="meet-date" name="meet-date" min="2022-01-01" required>
+                  <input type="date" id="meet-date" name="meet" min="2022-01-01" required>
                 </div>
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="confirm">

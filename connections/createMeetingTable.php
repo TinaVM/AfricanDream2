@@ -1,5 +1,5 @@
 <?php 
-include 'AfricanDream/XISD_web/db.php';
+//include 'db.php';
 
 //declaring database credentials
 $servername = "localhost";
