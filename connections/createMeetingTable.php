@@ -32,16 +32,16 @@ if(mysqli_query($mysqli,$query)){
 }
 
 $query = "CREATE TABLE meeting(
-    meeting_id VARCHAR(50) NOT NULL,
+    meeting_id int NOT NULL AUTO_INCREMENT,
     email VARCHAR(100) NOT NULL,
     phone int(10) NOT NULL, 
     person VARCHAR(100) NOT NULL,
     location varchar(100) not null,
     platform VARCHAR(100) NOT NULL,
     meetDate date NOT NULL,
-    login_id VARCHAR(50) NOT NULL,
-    CONSTRAINT PK_meet_id PRIMARY KEY(meeting_id),
-    CONSTRAINT FK_login_id FOREIGN KEY(login_id) REFERENCES login(login_id)
+    
+    CONSTRAINT PK_meet_id PRIMARY KEY(meeting_id)
+    
 )";
 
 if(mysqli_query($mysqli,$query)){

@@ -11,10 +11,10 @@ if(isset($_POst['submit'])){
     $person = $_POST['contact'];
     $location = $_POST['dropLocation'];
     $platform = $_POST['platform'];
-    $meet = $_POST['meet'];
+    $meet = date('Y-m-d',strtotime($_POST['meet']));
 
     //query for data insertion
-    $query =  "INSERT INTO meeting(emailAddress,phoneNumber,contact,dropLocation,platform,meet)
+    $query =  "INSERT INTO `meeting`(emailAddress,phoneNumber,contact,dropLocation,platform,meet)
     VALUES ('$email','$number','$person','$location','$platform','$meet')";
 
     $query_run = mysqli_query($db,$query);

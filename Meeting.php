@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+<?php include 'db.php';?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,15 +27,15 @@ session_start();
     <div class="meet-container">
         <h1>Book Meeting</h1>
         <section class="form-sec">
-            <form action="insert.php" method="POST">
+            <form action="" method="POST">
                 <div class="form-group">
                   <label for="emailAddress">Email address</label>
-                  <input type="email" class="form-control" name="emailAddress" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                   <label for="phoneNumber">Phone Number</label>
-                  <input type="tel" class="form-control" name="phoneNumber" placeholder="Enter Phone Number">
+                  <input type="tel" class="form-control" name="phone" placeholder="Enter Phone Number">
                 </div>
                 <div class="form-group">
                   <label for="contact">Contact Person</label>
@@ -45,8 +43,8 @@ session_start();
                 </div>
                 <div class="form-group">
                   <label for="place">Location</label>
-                  <select name="dropLocation" class="form-control">
-                    <option value="null" selected>--Select A Location--</option>
+                  <select name="location" class="form-control">
+                    <option value="" selected>--Select A Location--</option>
                     <option value="African Dream Offices">African Dream Offices</option>
                     <option value="Online">Online</option>
                     <option value="Other">Other</option>
@@ -61,13 +59,13 @@ session_start();
                 </div>
                 <div class="form--group">
                   <label for="pickDate">Pick A Date</label>
-                  <input type="date" id="meet-date" name="meet" min="2022-01-01" required>
+                  <input type="date" id="meetDate" name="meetDate" min="2022-01-01" required>
                 </div>
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="confirm">
                   <label class="form-check-label" for="confirm">I hereby confirm that the information presented is correct.</label>
                 </div>
-                <button type="submit" class="btn btn-primary">Book Meeting</button>
+                <button type="submit" name="submit" class="btn btn-primary">Book Meeting</button>
               </form>
         </section>
     </div>
@@ -75,3 +73,26 @@ session_start();
 </body>
 </html>
 
+<?php 
+/*$conn = mysqli_connect("localhost","root","");
+$db = mysqli_select_db($conn,'african');*/
+
+if(isset($_POST['submit'])){
+  $email = $_POST['email'];
+  $number = $_POST['phone']; 
+  $person = $_POST['contact'];
+  $location = $_POST['location'];
+  $platform = $_POST['platform'];
+  $meet = date('Y-m-d',strtotime($_POST['meetDate']));
+
+  $query = "INSERT INTO `meeting`(`email`,`phone`,`person`,`location`,`platform`,`meetDate`)
+   VALUES ('$email','$number','$person','$location','$platform',$meet')";
+   $query_run = mysqli_query($mysqli,$query);
+
+   if($query_run){
+    echo '<script type="text/javascript"> alert("Data inserted") </script>';
+   }else{
+    echo '<script type="text/javascript"> alert("Data not inserted") </script>';
+   }
+}
+?>
