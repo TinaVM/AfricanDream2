@@ -30,21 +30,21 @@
             <form action="" method="POST">
                 <div class="form-group">
                   <label for="emailAddress">Email address</label>
-                  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+                  <input type="email" class="form-control" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
                   <label for="phoneNumber">Phone Number</label>
-                  <input type="tel" class="form-control" name="phone" placeholder="Enter Phone Number">
+                  <input type="tel" class="form-control" name="phone" placeholder="Enter Phone Number" required>
                 </div>
                 <div class="form-group">
                   <label for="contact">Contact Person</label>
-                  <input type="text" class="form-control" name="contact" placeholder="Add Attendee">
+                  <input type="text" class="form-control" name="contact" placeholder="Add Attendee" required>
                 </div>
                 <div class="form-group">
                   <label for="place">Location</label>
-                  <select name="location" class="form-control">
-                    <option value="" selected>--Select A Location--</option>
+                  <select name="location" class="form-control" required>
+                    <option value="" selected >--Select A Location--</option>
                     <option value="African Dream Offices">African Dream Offices</option>
                     <option value="Online">Online</option>
                     <option value="Other">Other</option>
@@ -62,7 +62,7 @@
                   <input type="date" id="meetDate" name="meetDate" min="2022-01-01" required>
                 </div>
                 <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="confirm">
+                  <input type="checkbox" class="form-check-input" id="confirm" required>
                   <label class="form-check-label" for="confirm">I hereby confirm that the information presented is correct.</label>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary">Book Meeting</button>
