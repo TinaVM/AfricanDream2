@@ -1,3 +1,4 @@
+<?php include 'db.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,22 +30,22 @@
       <form method="post" action="">      
         <fieldset>      
             <legend class="equip">Choose Equipment To Hire:</legend>      
-            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 40m x 30m) X
-            <input type="text" id="tentItems" name="tentItems1"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 30m x 30m) X
-            <input type="text" id="tentItems" name="tentItems2"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 30m x 20m) X
-            <input type="text" id="tentItems" name="tentItems3"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents (Alpine Marquees 24m x 15m) X
-            <input type="text" id="tentItems" name="tentItems4"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents">Tents ( 18m x 9m) X
-            <input type="text" id="tentItems" name="tentItems5"><br>        
+            <input class="checkbox" type="checkbox" name="equipment" value="tents(40m x 30m)">Tents (Alpine Marquees 40m x 30m) X
+            <input type="number" id="tentItems" name="tentItems1"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents(30m x 30m)">Tents (Alpine Marquees 30m x 30m) X
+            <input type="number" id="tentItems" name="tentItems2"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents(30m x 20m)">Tents (Alpine Marquees 30m x 20m) X
+            <input type="number" id="tentItems" name="tentItems3"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents(24m x 15m)">Tents (Alpine Marquees 24m x 15m) X
+            <input type="number" id="tentItems" name="tentItems4"><br>
+            <input class="checkbox" type="checkbox" name="equipment" value="tents(18m x 9m)">Tents ( 18m x 9m) X
+            <input type="number" id="tentItems" name="tentItems5"><br>        
             <input type="checkbox" name="equipment" value="tables">Tables X
-            <input type="text" id="tableItems" name="tableItems"><br>      
+            <input type="number" id="tableItems" name="tableItems"><br>      
             <input type="checkbox" name="equipment" value="chairs">Chairs X
-            <input type="text" id="chairItems" name="chairItems"><br>
+            <input type="number" id="chairItems" name="chairItems"><br>
             <input type="checkbox" name="equipment" value="cutlery">Crockery & Cutlery (Set) X
-            <input type="text" id="cutleryItems" name="cutleryItems"><br>   
+            <input type="number" id="cutleryItems" name="cutleryItems"><br>   
             <br>
             </fieldset>
             <fieldset>
@@ -59,23 +60,37 @@
         <fieldset>
           <legend>Special Prerequisities:</legend>
           <p><span class="notice">*</span>Each special requsities are charged at a fee subject to VAT.</p>
-          <input  type="checkbox" name="other" value="standa">Exhibition Stands<br>      
-          <input type="checkbox" name="other" value="flowers">Flower Arrangements<br>      
-          <input type="checkbox" name="other" value="logitics">Other Logistics for Event<br>
+          <input  type="checkbox" name="other" value="Exhibition Stands">Exhibition Stands<br>      
+          <input type="checkbox" name="other" value="Flower Arrangements">Flower Arrangements<br>      
+          <input type="checkbox" name="other" value="Other Logistics">Other Logistics for Event<br>
           <textarea id="txtOther" name="txtOther" rows="5" cols="50" placeholder="Specify other logistics for event..."></textarea>
           </textarea>
         </fieldset> 
         <br>
         <fieldset>
           <legend>Total Cost:</legend>
-          <input type="text" id="cost" name="cost">
+          <input type="text" id="cost" name="cost" value="<?php echo $sum;?>">
         </fieldset>
         <br>
-        <input type="submit" value="Submit now" />     
+        <input type="submit" value="Submit now" class="btn btn-primary"/>     
     </form>
+    <?php 
+    $sum = "";
+    if(isset($_POSTT['submit'])){
+      $equip = $_POST['equip'];
+
+      foreach($equip as $item){
+        $query = "INSERT INTO"
+      }
+}
+?>
+
     </section>
-    6
+    
     </div>
     
 </body>
 </html>
+
+<?php 
+
