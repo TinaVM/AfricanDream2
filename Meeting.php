@@ -74,8 +74,7 @@
 </html>
 
 <?php 
-/*$conn = mysqli_connect("localhost","root","");
-$db = mysqli_select_db($conn,'african');*/
+
 
 if(isset($_POST['submit'])){
   $email = $_POST['email'];
@@ -86,7 +85,7 @@ if(isset($_POST['submit'])){
   $meet = date('Y-m-d',strtotime($_POST['meetDate']));
 
   $query = "INSERT INTO `meeting`(`email`,`phone`,`person`,`location`,`platform`,`meetDate`)
-   VALUES ('$email','$number','$person','$location','$platform',$meet')";
+   VALUES ('$email','$number','$person','$location','$platform','$meet')";
    $query_run = mysqli_query($mysqli,$query);
 
    if($query_run){
