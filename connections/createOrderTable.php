@@ -15,19 +15,19 @@ if(@mysqli_connect_errno()){
     exit();
 }
 
-if($result = mysqli_query($mysqli,"SHOW TABLES FROM order LIKE '%order%'")){
+if($result = mysqli_query($mysqli,"SHOW TABLES FROM order_online LIKE '%order%'")){
     if(mysqli_num_rows($result) == 1){
-        echo nl2br("Table order exists\r\n");
+        echo nl2br("Table order_online exists\r\n");
     }
 }else{
-    echo nl2br("Table order does not exist\r\n");
+    echo nl2br("Table order_online does not exist\r\n");
 }
 
-$query = 'DROP TABLE IF EXISTS `order`';
+$query = 'DROP TABLE IF EXISTS `order_online`';
 if(mysqli_query($mysqli,$query)){
-    echo nl2br("Table order has been deleted.\r\n");
+    echo nl2br("Table order_online has been deleted.\r\n");
 }else{
-    echo nl2br("Table order has not been deleted.\r\n");
+    echo nl2br("Table order_online has not been deleted.\r\n");
 }
 
 $query = "CREATE TABLE order_online(
@@ -40,10 +40,10 @@ $query = "CREATE TABLE order_online(
 )";
 
 if(mysqli_query($mysqli,$query)){
-    echo nl2br("Table order created successfully\r\n");
+    echo nl2br("Table order_online created successfully\r\n");
 
 }else{
-    echo nl2br("Error creating table order: \r\n"). @mysqli_error($mysqli);
+    echo nl2br("Error creating table order_online: \r\n"). @mysqli_error($mysqli);
 } 
 
 //Closing the connection
