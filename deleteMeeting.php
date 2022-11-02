@@ -8,7 +8,9 @@ if(isset($_GET['deleteid'])){
     $query_run = mysqli_query($mysqli,$query);
 
     if($query_run){
-        
+header("location:adminMeeting.php");
+    }else{
+        echo '<script type="text/javascript"> alert("Data not inserted") </script>';
     }
 }
 ?>
