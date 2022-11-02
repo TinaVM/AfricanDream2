@@ -1,6 +1,6 @@
 <?php
 
- include 'db.php'
+ include 'db.php';
   
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@
       <h1>Order Online</h1>
 
       <hr>
-      <form method="POST" action="order-db.php">
+      <form method="POST" action="">
       <table class="table table-bordered">
         <thead>
           <tr>
@@ -40,6 +40,7 @@
             <th>Equipment Name</th>
             <th>Equipment Price</th>
             <th>Equipment Quantity</th>
+            
           </tr>
         </thead>
         <tbody>
@@ -75,8 +76,21 @@
             <td><input type="number" name="equip_price[]" class="form-control"></td>
             <td><input type="number" name="equip_qty[]" class="form-control"></td>
           </tr>
+          
+          
+            
         </tbody>
       </table>
+      <br>
+      <section>
+      <fieldset>
+              <legend>Fuction Type:</legend> 
+            <select name="function">
+              <option value="choose" >--Select Function Size--</option>
+              <option value="small">Small</option>
+              <option value="large">Large</option>
+            </select>
+      </section>
       <div class="text-center">
         <input type="submit" name="submit" class="btn btn-success" value="Submit">
       </div>
@@ -85,6 +99,31 @@
     
 </body>
 </html>
+
+<?php 
+
+   if(isset($_POST['submit'])){
+    $checked_array = $_POST['equipid'];
+    foreach($_POST['equipname'] as $key => $value){
+       if(in_array($_POST['equipname'][$key],$checked_array)){
+        $equipname = $_POST['equipname'][$key];
+        
+        $equip_price = $_POST['equip_price'][$key];
+        $equip_quantity = $_POST['equip_qty'][$key];
+
+        $insertqry = "INSERT INTO `order_online`(`order_id`, `equip_name`, `equip_price`, `equip_quantity`) VALUES ('$equipname','$equip_price','$equip_quantity')";
+        $query_run = mysqli_query($mysqli,$insertqry);
+    }
+    }
+    if($query_run){
+      echo '<script type="text/javascript"> alert("Data inserted") </script>';
+      //header("location:Order.php");
+     }else{
+      echo '<script type="text/javascript"> alert("Data not inserted") </script>';
+     }
+  
+}
+?>
 
 
 

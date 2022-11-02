@@ -15,7 +15,7 @@ if(@mysqli_connect_errno()){
     exit();
 }
 
-if($result = mysqli_query($mysqli,"SHOW TABLES FROM order_online LIKE '%order%'")){
+if($result = mysqli_query($mysqli,"SHOW TABLES FROM order_online LIKE '%order_online%'")){
     if(mysqli_num_rows($result) == 1){
         echo nl2br("Table order_online exists\r\n");
     }
@@ -35,6 +35,9 @@ $query = "CREATE TABLE order_online(
     equip_name VARCHAR(100) NOT NULL,
     equip_price INT(10)  NOT NULL,
     equip_quantity INT(10) NOT NULL,
+    function_type VARCHAR(100) NOT NULL,
+    extras VARCHAR(100) NOT NULL,
+    specification VARCHAR(100) NOT NULL,
     CONSTRAINT PK_order_id PRIMARY KEY(order_id)  
 )";
 
