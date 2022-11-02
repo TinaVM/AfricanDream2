@@ -51,7 +51,7 @@ include 'db.php';
             <td>'.$platform.'</td>
             <td>'.$date.'</td>
             <td>
-        <button class="btn btn-primary><a href="updateMeeting.php" class="text-light">Update</a></button>
+        <button class="btn btn-primary"><a href="updateMeeting.php?updateid='.$id.'" class="text-light">Update</a></button>
         <button class="btn btn-danger"><a href="deleteMeeting.php?deleteid='.$id.'" class="text-light">Delete</a></button>
     </td>
           </tr>';
