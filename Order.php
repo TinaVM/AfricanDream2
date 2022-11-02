@@ -30,7 +30,48 @@
 
     <div class="order-container">
       <h1>Order Online</h1>
-    <section class="form-sec">
+
+      <hr>
+      <form>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Equipment Name</th>
+            <th>Equipment Price</th>
+            <th>Equipment Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" name=""></td>
+            <td>Tents</td>
+            <td><input type="number" name="" class="form-control"></td>
+            <td><input type="number" name="" class="form-control"></td>
+          </tr>
+          <tr>
+          <td><input type="checkbox" name=""></td>
+            <td>Tables</td>
+            <td><input type="number" name="" class="form-control"></td>
+            <td><input type="number" name="" class="form-control"></td>
+          </tr>
+          <tr>
+          <td><input type="checkbox" name=""></td>
+            <td>Chairs</td>
+            <td><input type="number" name="" class="form-control"></td>
+            <td><input type="number" name="" class="form-control"></td>
+          </tr>
+          <tr>
+          <td><input type="checkbox" name=""></td>
+            <td>Cutlery & Crockery (Set)</td>
+            <td><input type="number" name="" class="form-control"></td>
+            <td><input type="number" name="" class="form-control"></td>
+          </tr>
+        </tbody>
+      </table>
+      </form>
+      
+    <!--<section class="form-sec">
       <form method="post" action="">      
         <fieldset>      
             <legend class="equip">Choose Equipment To Hire:</legend>      
@@ -74,16 +115,12 @@
         <fieldset>
           <legend>Total Cost:</legend>
           <input type="text" id="cost" name="cost" value="<?php
-          $num = 0;
+          /*$num = 0;
           $total = 0;
-          if ((isset($_POST['equipment']) && ($_POST['tentItems1'])) || (isset($_POST['equipment2'] && ($_POST['tentItems2'])))
-          || ($_POST['equipment3']) && ($_POST['tentItems3']))
+          if (isset($_POST['equipment']) && ($_POST['tentItems1']))
             $num1 = $_POST['tentItems1'];
-            $num2 = $_POST['tentItems2'];
-            $num3 = $_POST['tentItems3'];
             $total = ($num * 500) + ($num2 * 600) + ($num3 * 700);
             echo $total;?>">
-            
            
           
          
@@ -114,7 +151,7 @@
 ?>
     </section>
     
-    </div>
+    </div>-->*/
 
 </body>
 </html>
