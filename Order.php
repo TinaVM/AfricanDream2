@@ -34,15 +34,15 @@
       <form method="post" action="">      
         <fieldset>      
             <legend class="equip">Choose Equipment To Hire:</legend>      
-            <input class="checkbox" type="checkbox" name="equipment" value="tents(40m x 30m)">Tents (Alpine Marquees 40m x 30m) X
+            <input class="checkbox" type="checkbox" name="equipment" value="e1">Tents (Alpine Marquees 40m x 30m) X
             <input type="number" id="tentItems" name="tentItems1"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents(30m x 30m)">Tents (Alpine Marquees 30m x 30m) X
+            <input class="checkbox" type="checkbox" name="equipment1" value="tents(30m x 30m)">Tents (Alpine Marquees 30m x 30m) X
             <input type="number" id="tentItems" name="tentItems2"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents(30m x 20m)">Tents (Alpine Marquees 30m x 20m) X
+            <input class="checkbox" type="checkbox" name="equipment2" value="tents(30m x 20m)">Tents (Alpine Marquees 30m x 20m) X
             <input type="number" id="tentItems" name="tentItems3"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents(24m x 15m)">Tents (Alpine Marquees 24m x 15m) X
+            <input class="checkbox" type="checkbox" name="equipment3" value="tents(24m x 15m)">Tents (Alpine Marquees 24m x 15m) X
             <input type="number" id="tentItems" name="tentItems4"><br>
-            <input class="checkbox" type="checkbox" name="equipment" value="tents(18m x 9m)">Tents ( 18m x 9m) X
+            <input class="checkbox" type="checkbox" name="equipment4" value="tents(18m x 9m)">Tents ( 18m x 9m) X
             <input type="number" id="tentItems" name="tentItems5"><br>        
             <input type="checkbox" name="equipment" value="tables">Tables X
             <input type="number" id="tableItems" name="tableItems"><br>      
@@ -73,31 +73,35 @@
         <br>
         <fieldset>
           <legend>Total Cost:</legend>
-          <input type="text" id="cost" name="cost" value="">
+          <input type="text" id="cost" name="cost" value="<?php
+          $num = 0;
+          $total = 0;
+          if ((isset($_POST['equipment']) && ($_POST['tentItems1'])) || (isset($_POST['equipment2'] && ($_POST['tentItems2'])))
+          || ($_POST['equipment3']) && ($_POST['tentItems3']))
+            $num1 = $_POST['tentItems1'];
+            $num2 = $_POST['tentItems2'];
+            $num3 = $_POST['tentItems3'];
+            $total = ($num * 500) + ($num2 * 600) + ($num3 * 700);
+            echo $total;?>">
+            
+           
+          
+         
+          
         </fieldset>
         <br>
         <input type="submit" value="Submit now" class="btn btn-primary"/>     
     </form>
-    
-
-   
-
-   
-  
-
-    </section>
-    
-    </div>
     <?php 
     if(isset($_POST['submit'])){
-      $equip = $_POST['equipment'];
+      $equip = $_POST['tentItems1'];
       $function = $_POST['function'];
       $other = $_POST['other'];
       $description = $_POST['txtOther'];
-
+      
       foreach($equip as $item){
         $query = "INSERT INTO `order_online`(`equipment`,`function_type`,`extras`,`specifications`) VALUES ('$item','$function','$other','$description')";
-        $query_run = mysqli_query($conn,$query);
+        $query_run = mysqli_query($mysqli,$query);
       }
 
       if($query_run){
@@ -108,6 +112,10 @@
     }
 
 ?>
+    </section>
+    
+    </div>
+
 </body>
 </html>
 

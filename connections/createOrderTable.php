@@ -33,9 +33,11 @@ if(mysqli_query($mysqli,$query)){
 $query = "CREATE TABLE order_online(
     order_id int NOT NULL AUTO_INCREMENT,
     equipment VARCHAR(100) NOT NULL,
+    numItems INT(10) NOT NULL,
     function_type VARCHAR(100) NOT NULL, 
     extras VARCHAR(100) NOT NULL,
     specification varchar(100) not null,
+    total INT(10) NOT NULL,
     CONSTRAINT PK_order_id PRIMARY KEY(order_id)  
 )";
 
