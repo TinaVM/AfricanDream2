@@ -1,4 +1,8 @@
-<?php include 'db.php'?>
+<?php
+
+ include 'db.php'
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,28 +73,43 @@
         <br>
         <fieldset>
           <legend>Total Cost:</legend>
-          <input type="text" id="cost" name="cost" value="<?php echo $sum;?>">
+          <input type="text" id="cost" name="cost" value="">
         </fieldset>
         <br>
         <input type="submit" value="Submit now" class="btn btn-primary"/>     
     </form>
-    <?php 
-    $sum = "";
-    if(isset($_POSTT['submit'])){
-      $equip = $_POST['equip'];
+    
 
-      foreach($equip as $item){
-        $query = "INSERT INTO"
-      }
-}
-?>
+   
+
+   
+  
 
     </section>
     
     </div>
-    
+    <?php 
+    if(isset($_POST['submit'])){
+      $equip = $_POST['equipment'];
+      $function = $_POST['function'];
+      $other = $_POST['other'];
+      $description = $_POST['txtOther'];
+
+      foreach($equip as $item){
+        $query = "INSERT INTO `order_online`(`equipment`,`function_type`,`extras`,`specifications`) VALUES ('$item','$function','$other','$description')";
+        $query_run = mysqli_query($conn,$query);
+      }
+
+      if($query_run){
+        echo '<script type="text/javascript"> alert("Data inserted") </script>';
+       }else{
+        echo '<script type="text/javascript"> alert("Data not inserted") </script>';
+       }
+    }
+
+?>
 </body>
 </html>
 
-<?php 
+
 
