@@ -28,18 +28,18 @@
 		<a href="#reviews">Reviews</a>
 	  </div>-->
 
-    <div class="order-container">
+    <div class="order-container" style="margin:20px; background-color:#f3faf8;">
       <h1>Order Online</h1>
 
       <hr>
       <form method="POST" action="">
-      <table class="table table-bordered">
+      <table class="table table-bordered" style="background-color: white; margin:10px;">
         <thead>
           <tr>
-            <th></th>
-            <th>Equipment Name</th>
-            <th>Equipment Price</th>
-            <th>Equipment Quantity</th>
+            <th class="col-1"></th>
+            <th class="col-2">Equipment Name</th>
+            <th class="col-2">Equipment Price</th>
+            <th class="col-2">Equipment Quantity</th>
             
           </tr>
         </thead>
@@ -91,11 +91,25 @@
               <option value="large">Large</option>
             </select>
       </section>
+      <br>
+      <section>
+      <fieldset>
+          <legend>Special Prerequisities:</legend>
+          <p><span class="notice">*</span>Each special requsities are charged at a fee subject to VAT.</p>
+          <input  type="checkbox" name="other" value="Exhibition Stands">Exhibition Stands<br>      
+          <input type="checkbox" name="other" value="Flower Arrangements">Flower Arrangements<br>      
+          <input type="checkbox" name="other" value="Other Logistics">Other Logistics for Event<br>
+          <textarea id="txtOther" name="txtOther" rows="5" cols="50" placeholder="Specify other logistics for event..."></textarea>
+          </textarea>
+        </fieldset> 
+      </section>
       <div class="text-center">
         <input type="submit" name="submit" class="btn btn-success" value="Submit">
+        
+        <button class="btn btn-success"><a href="Homepage.html" style="color:white;">Home</button>
       </div>
       </form>
-      
+    </div> 
     
 </body>
 </html>
