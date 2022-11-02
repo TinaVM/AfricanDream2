@@ -1,3 +1,6 @@
+<?php 
+include 'db.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,54 @@
 <body>
     <div class="container">
         <button class="btn btn-primary my-5"><a href="Meeting.php" class="text-light">Add Meeting</a></button>
+        <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Meeting ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone No.</th>
+      <th scope="col">Contact Person</th>
+      <th scope="col">Location</th>
+      <th scope="col">Platform</th>
+      <th scope="col">Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php 
+    
+     $query = "SELECT * FROM `meeting`";
+     $query_run = mysqli_query($mysqli,$query);
+
+     if($query_run){
         
+        while($row = mysqli_fetch_assoc($query_run)){
+            $id = $row['meeting_id'];
+            $email = $row['email'];
+            $phone = $row['phone'];
+            $person = $row['person'];
+            $location = $row['location'];
+            $platform = $row['platform'];
+            $date = $row['meetDate'];
+
+            echo '<tr>
+            <th scope="row">'.$id.'</th>
+            <td>'.$email.'</td>
+            <td>'.$phone.'</td>
+            <td>'.$person.'</td>
+            <td>'.$location.'</td>
+            <td>'.$platform.'</td>
+            <td>'.$date.'</td>
+            <td>
+        <button class="btn btn-primary><a href="updateMeeting.php" class="text-light">Update</a></button>
+        <button class="btn btn-danger"><a href="deleteMeeting.php" class="text-light">Delete</a></button>
+    </td>
+          </tr>';
+        }
+     }
+    ?>
+    
+  </tbody>
+</table>
     
     </div>
 </body>

@@ -89,7 +89,8 @@ if(isset($_POST['submit'])){
    $query_run = mysqli_query($mysqli,$query);
 
    if($query_run){
-    echo '<script type="text/javascript"> alert("Data inserted") </script>';
+    //echo '<script type="text/javascript"> alert("Data inserted") </script>';
+    header("location:addMeeting.php");
    }else{
     echo '<script type="text/javascript"> alert("Data not inserted") </script>';
    }
