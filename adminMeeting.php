@@ -12,6 +12,7 @@ include 'db.php';
 </head>
 <body>
     <div class="container">
+      <h1>Admin Meeting</h1>
         <button class="btn btn-primary my-5"><a href="Meeting.php" class="text-light">Add Meeting</a></button>
         <table class="table">
   <thead>
