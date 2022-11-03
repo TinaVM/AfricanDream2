@@ -8,19 +8,19 @@
     <link rel="stylesheet" href="css/style-main.css">
 </head>
 <body>
-    <!--Sidebarr-->
+     <!--Sidebarr-->
 	
-	<div class="sidebar">
-		<a class="active" href="Homepage.html">Home</a>
-		<a href="order.html">Order Online</a>
-		<a href="Meeting.html">Book Meeting</a>
-		<a href="Events.html">Major Events</a>
-		<a href="#celeb">Celebrations</a>
-		<a href="#wedding">Weddings</a>
-		<a href="#about">About Us</a>
-		<a href="#contact">Contact Us</a>
-		<a href="#reviews">Reviews</a>
-	  </div>
+  <div class="sidebar">
+	<a class="active" href="Homepage.php">Home</a>
+	<a href="Order.php">Order Online</a>
+	<a href="Meeting.php">Book Meeting</a>
+	<a href="Events.php">Major Events</a>
+	<a href="Celebrations.php">Celebrations</a>
+	<a href="Weddings.php">Weddings</a>
+	<a href="About Us.php">About Us</a>
+	<a href="Contact Us.php">Contact Us</a>
+	<a href="#reviews">Reviews</a>
+  </div>
 
       <div class="events-container">
         <h1>Major Events</h1>

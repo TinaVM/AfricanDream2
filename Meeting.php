@@ -1,4 +1,33 @@
-<?php include 'db.php';?>
+<?php include 'db.php';
+$result="";
+if (isset($_POST['submit'])){
+  require 'phpmailer/PHPMailerAutoload.php';
+  $mail = new PHPMailer;
+
+  $mail->Host='smtp.gmail.com';
+  $mail->Port=587;
+  $mail->SMTPAuth=true;
+  $mail->SMTPSecure='tls';
+  $mail->Username='tina.testing4tinaDev@gmail.com';
+  $mail->Password='vlok92#!';
+
+  $mail->setFrom($_POST['email']);
+  $mail->addAddress('testing4tinaDev@gmail.com');
+  $mail->addReplyTo($_POST['email']);
+
+  $mail->isHTML(true);
+  $mail->Subject= 'Book Meeting Form: ' .$_POST['location'];
+  $mail->Body='<h1 align=center>Book Meeting For: '.$_POST['meetDate'].'<br>Email: '.$_POST['email'].'<br>
+  Message: '.$_POST['contact'].'</h1>';
+
+  if(!$mail->send()){
+    $result="Something went wrong, Pleas try again.";
+  }else{
+    $result="Thanks ".$_POST['email']." for booking your meeting. Your meeting will be scheduled soon!";
+  }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,23 +39,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-  <!--Sidebarr-->
+   <!--Sidebarr-->
 	
-	<div class="sidebar">
-		<a class="active" href="Homepage.html">Home</a>
-		<a href="order.html">Order Online</a>
-		<a href="Meeting.html">Book Meeting</a>
-		<a href="Events.html">Major Events</a>
-		<a href="#celeb">Celebrations</a>
-		<a href="#wedding">Weddings</a>
-		<a href="#about">About Us</a>
-		<a href="#contact">Contact Us</a>
-		<a href="#reviews">Reviews</a>
-	  </div>
+   <div class="sidebar">
+	<a class="active" href="Homepage.php">Home</a>
+	<a href="Order.php">Order Online</a>
+	<a href="Meeting.php">Book Meeting</a>
+	<a href="Events.php">Major Events</a>
+	<a href="Celebrations.php">Celebrations</a>
+	<a href="Weddings.php">Weddings</a>
+	<a href="About Us.php">About Us</a>
+	<a href="Contact Us.php">Contact Us</a>
+	<a href="#reviews">Reviews</a>
+  </div>
 
     <div class="meet-container">
         <h1>Book Meeting</h1>
         <section class="form-sec">
+          <h5 class="text-center text-success"><?=$result; ?></h5>
             <form action="" method="POST">
                 <div class="form-group">
                   <label for="emailAddress">Email address</label>
@@ -89,8 +119,8 @@ if(isset($_POST['submit'])){
    $query_run = mysqli_query($mysqli,$query);
 
    if($query_run){
-    //echo '<script type="text/javascript"> alert("Data inserted") </script>';
-    header("location:addMeeting.php");
+    echo '<script type="text/javascript"> alert("Data inserted") </script>';
+   // header("location:addMeeting.php");
    }else{
     echo '<script type="text/javascript"> alert("Data not inserted") </script>';
    }
