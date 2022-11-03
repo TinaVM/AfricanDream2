@@ -99,12 +99,12 @@
 			<section class="circles">
 				<h4 class="title-head-circles">Useful Links</h4>
 				<div class="box">
-					<img src="images/wedding.jpg" href="#weddings.html">
+					<img src="images/wedding.jpg" href="Wedding.php">
 					<h4 class="label-1">WEDDINGS</h4>
 					<div class="bg-clipPath"></div>
 				  </div>
 				  <div class="box-2">
-					<img src="images/celebrate.jpg" href="#celebrations.html">
+					<img src="images/celebrate.jpg" href="Celebrations.php">
 					<h4 class="label">CELEBRATIONS</h4>
 				  </div>
 				  <div class="box-3">

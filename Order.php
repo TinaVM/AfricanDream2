@@ -106,7 +106,7 @@
       <div class="text-center">
         <input type="submit" name="submit" class="btn btn-success" value="Submit">
         
-        <button class="btn btn-success"><a href="Homepage.html" style="color:white;">Home</button>
+        <button class="btn btn-success"><a href="Homepage.php" style="color:white;">Home</button>
       </div>
       </form>
     </div> 

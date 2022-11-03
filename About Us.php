@@ -17,7 +17,7 @@
     </head>
 
 <body>
-    <div class=" Wrapper">
+    
 
     <!--Sidebarr-->
 	
@@ -113,8 +113,8 @@
            
     
             
-    </div>
-    </div>
+    
+   
 
 
 </body>
