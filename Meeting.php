@@ -1,5 +1,5 @@
 <?php include 'db.php';
-$result="";
+/*$result="";
 if (isset($_POST['submit'])){
   require 'phpmailer/PHPMailerAutoload.php';
   $mail = new PHPMailer;
@@ -26,7 +26,7 @@ if (isset($_POST['submit'])){
     $result="Thanks ".$_POST['email']." for booking your meeting. Your meeting will be scheduled soon!";
   }
 
-}
+}*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
