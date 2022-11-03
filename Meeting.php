@@ -56,7 +56,7 @@ if (isset($_POST['submit'])){
     <div class="meet-container">
         <h1>Book Meeting</h1>
         <section class="form-sec">
-          <h5 class="text-center text-success"><?=$result; ?></h5>
+          <h5 class="text-center text-success"></h5>
             <form action="" method="POST">
                 <div class="form-group">
                   <label for="emailAddress">Email address</label>
