@@ -11,4 +11,80 @@ function emptyValidation($userid,$email,$name,$address,$password){
      }
      return $flag;
 }
+
+//checkinbg if user id entered is valid or not
+function studentIDvalidation($userid) //Checking if the student ID entered is valid or not
+    {
+        global $userid;
+        $flag = true;
+        if(empty($userid)){
+        echo "";
+        }else{
+        if(!preg_match("/NWU1011/", $studentid) || strlen($studentid) !== 10){
+            echo "<script>alert('You have entered an invalid student ID, try again!')</script>";
+            global $count;
+            $count++;
+        }
+        else{
+            $flag = false;
+        }
+    }
+        return $flag;
+    } 
+
+//password validation - checking if valid or not
+function passwordValidation($password) 
+    {
+        global $password;
+        $flag = true;
+        if(empty($password)){
+            echo "";
+        }else{
+        if(strlen(trim($password)) < 6){
+            echo "<script>alert('You have entered an invalid password, must be longer than 6 characters, try again!')</script>";
+            global $count;
+            $count++;
+        }
+        else{
+            $flag = false;
+        }
+        return $flag;
+    }
+}
+
+//email * checking if valid or not
+function emailValidation($email) 
+    
+        {
+        global $email;
+        $flag = true;
+        if(empty($email)){
+            echo "";
+        }else{
+            if(!preg_match("/@/", $email)){
+                echo "<script>alert('You have entered an invalid email address, try again!')</script>";
+                global $count;
+                $count++;
+            }
+            else{
+                $flag = false;
+            }
+        }
+            return $flag;
+        }
+
+        function userIDexists($userid) //Checking if the user id already exists or not
+    {
+        global $result;
+        $flag = true;
+        if (mysqli_num_rows($result) > 0) {
+            echo "<script>alert('You have entered a student number that already exists, try again!')</script>";
+            global $count;
+            $count++;
+        }
+        else{
+            $flag = false;
+        }
+        return $flag;
+    } 
 ?>
