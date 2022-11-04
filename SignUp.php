@@ -243,17 +243,17 @@ form .btn input[type="submit"]{
             <div class="form-inner">
                <form action="#" class="login">
                   <div class="field">
-                     <input type="text" placeholder="Email Address" required>
+                     <input type="text" name="email" placeholder="Email Address" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                     <input type="password" name="password" placeholder="Password" required>
                   </div>
                   <div class="pass-link">
                      <a href="#">Forgot password?</a>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Login">
+                     <input type="submit" name="submit" value="Login">
                   </div>
                   <div class="signup-link">
                      Not a member? <a href="">Signup now</a>
@@ -261,17 +261,23 @@ form .btn input[type="submit"]{
                </form>
                <form action="#" class="signup">
                   <div class="field">
-                     <input type="text" placeholder="Email Address" required>
+                     <input type="text" name="email" placeholder="Email Address" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Password" required>
+                     <input type="text" name="name" placeholder="Name/Organisation" required>
                   </div>
                   <div class="field">
-                     <input type="password" placeholder="Confirm password" required>
+                     <input type="text" name="address" placeholder="Address" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" placeholder="Password" required>
+                  </div>
+                  <div class="field">
+                     <input type="password" name="password" placeholder="Confirm password" required>
                   </div>
                   <div class="field btn">
                      <div class="btn-layer"></div>
-                     <input type="submit" value="Signup">
+                     <input type="submit" name="submit" value="Signup">
                   </div>
                </form>
             </div>
