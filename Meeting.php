@@ -69,7 +69,7 @@ if (isset($_POST['submit'])){
                 </div>
                 <div class="form-group">
                   <label for="contact">Contact Person</label>
-                  <input type="text" class="form-control" name="contact" placeholder="Add Attendee" required>
+                  <input type="text" class="form-control" name="person" placeholder="Add Attendee" required>
                 </div>
                 <div class="form-group">
                   <label for="place">Location</label>

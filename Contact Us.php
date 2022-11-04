@@ -43,10 +43,6 @@
                   <label for="contact">Reason for Contact:</label>
                   <input type="text" class="form-control" id="contact" placeholder="Enter reason for contact">
                 </div>
-				<div class="form-group">
-					<label for="DOF">Date of event:</label>
-					<input type="text" class="form-control" id="DOF" placeholder="Enter date of event">
-				  </div>
 				  <div class="form--group">
 					<label for="DOE">Date of Event</label>
 					<input type="date" id="DOE" name="Date-of-event" min="2022-01-01" required>

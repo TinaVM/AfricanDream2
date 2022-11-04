@@ -5,7 +5,7 @@ $query_run = mysqli_query($mysqli,$query);
 $row=mysqli_fetch_assoc($query_run);
 $email = $row['email'];
     $number = $row['phone']; 
-    $person = $row['contact'];
+    $person = $row['person'];
     $location = $row['location'];
     $platform = $row['platform'];
     $meet = date('Y-m-d',strtotime($row['meetDate']));
@@ -13,7 +13,7 @@ $email = $row['email'];
 if(isset($_POST['submit'])){
     $email = $_POST['email'];
     $number = $_POST['phone']; 
-    $person = $_POST['contact'];
+    $person = $_POST['person'];
     $location = $_POST['location'];
     $platform = $_POST['platform'];
     $meet = date('Y-m-d',strtotime($_POST['meetDate']));
@@ -71,7 +71,7 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="form-group">
                   <label for="contact">Contact Person</label>
-                  <input type="text" class="form-control" name="contact" placeholder="Add Attendee" value=<?php echo $person;?>>
+                  <input type="text" class="form-control" name="person" placeholder="Add Attendee" value=<?php echo $person;?>>
                 </div>
                 <div class="form-group">
                   <label for="place">Location</label>

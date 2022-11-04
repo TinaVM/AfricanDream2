@@ -49,7 +49,7 @@
             <td>Tents
               <input type="hidden" name="equipname[]" value="Tents">
             </td>
-            <td><input type="number" name="equip_price[]" class="form-control"></td>
+            <td><input type="number" name="equip_price[]" class="form-control" value="1000"></td>
             <td><input type="number" name="equip_qty[]" class="form-control"></td>
           </tr>
           <tr>
@@ -57,7 +57,7 @@
             <td>Tables
             <input type="hidden" name="equipname[]" value="Tables">
             </td>
-            <td><input type="number" name="equip_price[]" class="form-control"></td>
+            <td><input type="number" name="equip_price[]" class="form-control" value="2500"></td>
             <td><input type="number" name="equip_qty[]" class="form-control"></td>
           </tr>
           <tr>
@@ -65,7 +65,7 @@
             <td>Chairs
             <input type="hidden" name="equipname[]" value="Chairs">
             </td>
-            <td><input type="number" name="equip_price[]" class="form-control"></td>
+            <td><input type="number" name="equip_price[]" class="form-control" value="800"></td>
             <td><input type="number" name="equip_qty[]" class="form-control"></td>
           </tr>
           <tr>
@@ -73,7 +73,7 @@
             <td>Cutlery & Crockery (Set)
             <input type="hidden" name="equipname[]" value="Cutlery & Crockery (set)">
             </td>
-            <td><input type="number" name="equip_price[]" class="form-control"></td>
+            <td><input type="number" name="equip_price[]" class="form-control" value="650"></td>
             <td><input type="number" name="equip_qty[]" class="form-control"></td>
           </tr>
           
