@@ -241,15 +241,15 @@ form .btn input[type="submit"]{
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="Register.php" class="login">
+               <form action="Login.php" class="login">
+               <?php global $count, $count2; if($count > 0 || $count2 > 0) {?>
+                <h3 class ="error"><?php echo $error; ?></h3> <!--Displaying error messages -->
+                <?php } ?>
                <div class="field">
-                     <input type="text" name="user_id" placeholder="User ID" required>
+                     <input type="text" name="user_id" placeholder="User ID" value="<?php if (!empty($id)){ echo $id; }?>">
                   </div>
                   <div class="field">
-                     <input type="text" name="email" placeholder="Email Address" required>
-                  </div>
-                  <div class="field">
-                     <input type="password" name="password" placeholder="Password" required>
+                     <input type="password" name="password" placeholder="Password" value="<?php if (!empty($password)){ echo $password; }?>">
                   </div>
                   <div class="pass-link">
                      <a href="#">Forgot password?</a>
@@ -264,23 +264,23 @@ form .btn input[type="submit"]{
                </form>
                <form action="Register.php" class="signup">
                <div class="field">
-                     <input type="text" name="user_id" placeholder="User ID" required>
+                     <input type="text" name="user_id" placeholder="User ID" value="<?php if(isset($_POST['user_id'])) echo $_POST['user_id']; ?>">
                   </div>
                   <div class="field">
-                     <input type="text" name="email" placeholder="Email Address" required>
+                     <input type="text" name="email" placeholder="Email Address" value="<?php if(isset($_POST['email'])) echo $_POST['email']; ?>">
                   </div>
                   <div class="field">
-                     <input type="text" name="name" placeholder="Name/Organisation" required>
+                     <input type="text" name="name" placeholder="Name/Organisation" value="<?php if(isset($_POST['name'])) echo $_POST['name']; ?>">
                   </div>
                   <div class="field">
-                     <input type="text" name="address" placeholder="Address" required>
+                     <input type="text" name="address" placeholder="Address" value="<?php if(isset($_POST['address'])) echo $_POST['address']; ?>">
                   </div>
                   <div class="field">
-                     <input type="password" name="password" placeholder="Password" required>
+                     <input type="password" name="password" placeholder="Password" value="<?php if(isset($_POST['password'])) echo $_POST['password']; ?>">
                   </div>
-                  <div class="field">
-                     <input type="password" name="password" placeholder="Confirm password" required>
-                  </div>
+                  <!--<div class="field">
+                     <input type="password" name="password" placeholder="Confirm password" value="">
+                  </div>-->
                   <div class="field btn">
                      <div class="btn-layer"></div>
                      <input type="submit" name="submit" value="Signup">
