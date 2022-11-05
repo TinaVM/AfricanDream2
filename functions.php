@@ -73,6 +73,24 @@ function emailValidation($email)
             return $flag;
         }
 
+    //Checking if the user ID entered is valid or not
+    function userIDvalidation($userid){
+        global $userid;
+        $flag = true;
+        if(empty($userid)){
+            echo "";
+        }else{
+        if(!preg_match("/AD00/", $userid) || strlen($userid) !== 7){
+            echo "<script>alert('You have entered an invalid user ID, try again!')</script>";
+            global $count;
+            $count++;
+        }else{
+            $flag = false;
+        }
+        }
+        return $flag;
+    }
+
         function userIDexists($userid) //Checking if the user id already exists or not
     {
         global $result;

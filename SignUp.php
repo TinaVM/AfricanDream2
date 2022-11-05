@@ -241,7 +241,10 @@ form .btn input[type="submit"]{
                <div class="slider-tab"></div>
             </div>
             <div class="form-inner">
-               <form action="#" class="login">
+               <form action="Register.php" class="login">
+               <div class="field">
+                     <input type="text" name="user_id" placeholder="User ID" required>
+                  </div>
                   <div class="field">
                      <input type="text" name="email" placeholder="Email Address" required>
                   </div>
@@ -259,7 +262,10 @@ form .btn input[type="submit"]{
                      Not a member? <a href="">Signup now</a>
                   </div>
                </form>
-               <form action="#" class="signup">
+               <form action="Register.php" class="signup">
+               <div class="field">
+                     <input type="text" name="user_id" placeholder="User ID" required>
+                  </div>
                   <div class="field">
                      <input type="text" name="email" placeholder="Email Address" required>
                   </div>
