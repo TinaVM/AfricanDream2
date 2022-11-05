@@ -13,14 +13,14 @@ function emptyValidation($userid,$email,$name,$address,$password){
 }
 
 //checkinbg if user id entered is valid or not
-function studentIDvalidation($userid) //Checking if the student ID entered is valid or not
+/*function userIDvalidation($userid)
     {
         global $userid;
         $flag = true;
         if(empty($userid)){
         echo "";
         }else{
-        if(!preg_match("/NWU1011/", $studentid) || strlen($studentid) !== 10){
+        if(!preg_match("/NWU1011/", $userid) || strlen($userid) !== 10){
             echo "<script>alert('You have entered an invalid student ID, try again!')</script>";
             global $count;
             $count++;
@@ -31,7 +31,7 @@ function studentIDvalidation($userid) //Checking if the student ID entered is va
     }
         return $flag;
     } 
-
+*/
 //password validation - checking if valid or not
 function passwordValidation($password) 
     {
