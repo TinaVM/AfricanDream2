@@ -47,6 +47,28 @@ if(mysqli_query($mysqli,$query)){
     echo nl2br("Error creating table user: \r\n"). @mysqli_error($mysqli);
 } 
 
+//Reading text file and inserting data
+
+//creating new instance of connection
+$mysqli = new mysqli('localhost','root','','african');
+//opening file stream and reads it only 'r'
+$file = fopen("userData.txt","r");
+
+while(!feof($file)){
+    $content = fgets($file);
+    //data was separated with ';' in text file
+    $carray = explode(";", $content);
+    //assingin varibales to table column heading to link data
+    list($user_id,$email,$name,$address,$password) = $carray;
+    $sql = "insert into `user`(`user_id`,`email`,`address`,`password`) values('$user_id','$email','$name','$address','$password')";
+    //Displays/sorta file contents into array
+    @mysqli_query($mysqli,$sql);
+    //--REMOVING UNNECESSARY NOTICE ERROR DUE TO CODE PRODUCING DESIRED RESULTS
+//SOURCE: https://phoenixnap.com/kb/php-error-reporting
+error_reporting(0);
+} 
+fclose($file);
+
 //Closing the connection
 mysqli_close($mysqli)
 ?>
