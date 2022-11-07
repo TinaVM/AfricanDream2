@@ -1,33 +1,70 @@
-<?php 
-session_start();
-include "db.php";
+<?php
 
-if(isset($_POST["submit"])){
-    $id = $_POST['ID'];
-    $password = $_POST['password'];
-    $count = 0;
-    if(empty($id) || empty($password)) //Form validations
-        {
-            $count++;
-            $error = "Fill in all Fields!";
+$is_invalid = false;
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    
+    $mysqli = require __DIR__ . "/database.php";
+    
+    $sql = sprintf("SELECT * FROM user
+                    WHERE email = '%s'",
+                   $mysqli->real_escape_string($_POST["email"]));
+    
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+    
+    if ($user) {
+        
+        if (password_verify($_POST["password"], $user["password_hash"])) {
+            
+            session_start();
+            
+            session_regenerate_id();
+            
+            $_SESSION["user_id"] = $user["id"];
+            
+            header("Location: index.php");
+            exit;
         }
-        else{
-
-    $password = md5($password); //Undoing the hashing for the password
-    $query = "SELECT name, email FROM user WHERE user_id = '$id' and password = '$password'"; //Sql query to retrieve data from table        
-    $result = mysqli_query($mysqli,$query);
-    $count2 = 0; //Error counter
-    if($result -> num_rows > 0) { //Validating data against data entered
-        $row = mysqli_fetch_assoc($result);
-        $_SESSION['Uid'] = $id;  
-        $_SESSION['name'] = $row['name'];
-        $_SESSION['email'] = $row['email'];
-        echo "<script>alert('Please wait, awaiting confirmation...')</script>";
-        header("Location: Homepage.php"); //Takes user to next page
-    }else {  
-        $count2++;
-        $error = "Incorrect User ID or Password, try again!";
     }
- }
+    
+    $is_invalid = true;
 }
+
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+    
+    <h1>Login</h1>
+    
+    <?php if ($is_invalid): ?>
+        <em>Invalid login</em>
+    <?php endif; ?>
+    
+    <form method="post">
+        <label for="email">email</label>
+        <input type="email" name="email" id="email"
+               value="<?= htmlspecialchars($_POST["email"] ?? "") ?>">
+        
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        
+        <button>Log in</button>
+    </form>
+    
+</body>
+</html>
+
+
+
+
+
+
+
