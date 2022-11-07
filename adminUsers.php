@@ -38,19 +38,34 @@
                 if($connection->connect_error){
                     die("Connection failed: " . $connection->connect_error);
                 }
-                ?>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+
+                //read all row from database table
+                $sql = "SELECT * FROM user";
+                $result = $connection->query($sql);
+
+                if(!$result){
+                    die("Invalid query: " . $connection->error);
+                }
+
+                //read data of each row
+                while($row = $result->fetch_assoc()){
+                    echo "
+                    <tr>
+                    <td>$row[id]</td>
+                    <td>$row[user_id]</td>
+                    <td>$row[email]</td>
+                    <td>$row[name]</td>
+                    <td>$row[address]</td>
+                    <td>$row[password]</td>
                     <td>
-                        <a class='btn btn-primary btn sm' href='/AfricanDream/editUser.php'>Edit</a>
-                        <a class='btn btn-danger btn sm' href='/AfricanDream/deleteUser.php'>Edit</a>
+                        <a class='btn btn-primary btn sm' href='/AfricanDream/editUser.php?id=$row[id]'>Edit</a>
+                        <a class='btn btn-danger btn sm' href='/AfricanDream/deleteUser.php?id=$row[id]'>Edit</a>
                     </td>
                 </tr>
+                    ";
+                }
+                ?>
+                
             </tbody>
         </table>
     </div>
