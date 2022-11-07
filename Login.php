@@ -13,16 +13,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $mysqli->query($sql);
     
     $user = $result->fetch_assoc();
+
+    $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
     
     if ($user) {
         
-        if (password_verify($_POST["password"], $user["password_hash"])) {
+        if (password_verify($_POST["password"], $user["password"])) {
             
             session_start();
             
             session_regenerate_id();
             
-            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_id"] = $user["user_id"];
             
             header("Location: Homepage.php");
             exit;
