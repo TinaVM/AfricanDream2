@@ -1,4 +1,4 @@
-const validation = new JustValidate("#signup");
+const validation = new JustValidate("#Signup");
 
 validation
 addField("#uid", [
@@ -53,7 +53,7 @@ addField("#uid", [
         }
     ])
     .onSuccess((event) => {
-        document.getElementById("signup").submit();
+        document.getElementById("Signup").submit();
     });
     
     

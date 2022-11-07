@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js" defer></script>
-    <script src="/js/validation.js" defer></script>
+    <script src="/javascript/validation.js" defer></script>
 </head>
 <body>
     
     <h1>Signup</h1>
     
-    <form action="process-signup.php" method="post" id="signup" novalidate>
+    <form action="process-signup.php" method="post" id="Signup" novalidate>
         <div>
             <label for="uid">User ID</label>
             <input type="text" id="uid" name="uid">
