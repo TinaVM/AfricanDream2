@@ -33,10 +33,10 @@ if(mysqli_query($mysqli,$query)){
 
 $query = "CREATE TABLE user(
     user_id VARCHAR(50) NOT NULL,
-    email VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL,
     name VARCHAR(100) NOT NULL,
     address VARCHAR(200) NOT NULL,
-    password VARCHAR(100) NOT NULL, 
+    password VARCHAR(255) NOT NULL, 
     CONSTRAINT PK_user_id PRIMARY KEY(user_id)
 )";
 
@@ -50,11 +50,11 @@ if(mysqli_query($mysqli,$query)){
 //Reading text file and inserting data
 
 //creating new instance of connection
-$mysqli = new mysqli('localhost','root','','african');
+//$mysqli = new mysqli('localhost','root','','african');
 //opening file stream and reads it only 'r'
-$file = fopen("userData.txt","r");
+//$file = fopen("userData.txt","r");
 
-while(!feof($file)){
+/*while(!feof($file)){
     $content = fgets($file);
     //data was separated with ';' in text file
     $carray = explode(";", $content);
@@ -67,7 +67,7 @@ while(!feof($file)){
 //SOURCE: https://phoenixnap.com/kb/php-error-reporting
 error_reporting(0);
 } 
-fclose($file);
+fclose($file);*/
 
 //Closing the connection
 mysqli_close($mysqli)

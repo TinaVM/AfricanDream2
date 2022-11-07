@@ -32,10 +32,10 @@ if ($_POST["password"] !== $_POST["password_confirmation"]) {
 
 $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
-$mysqli = require __DIR__ . "/database.php";
+$mysqli = require __DIR__ . "/db.php";
 
-$sql = "INSERT INTO user (name, email, password_hash)
-        VALUES (?, ?, ?)";
+$sql = "INSERT INTO user (user_id, email, name, address, password_hash)
+        VALUES (?, ?, ?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
 
@@ -44,8 +44,10 @@ if ( ! $stmt->prepare($sql)) {
 }
 
 $stmt->bind_param("sss",
+$_POST["user_id"],
+$_POST["email"],
                   $_POST["name"],
-                  $_POST["email"],
+                  $_POST["address"],
                   $password_hash);
                   
 if ($stmt->execute()) {
