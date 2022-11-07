@@ -21,6 +21,7 @@
                     <th>Name</th>
                     <th>Address</th>
                     <th>Password</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,7 +60,7 @@
                     <td>$row[password]</td>
                     <td>
                         <a class='btn btn-primary btn sm' href='/AfricanDream/editUser.php?id=$row[id]'>Edit</a>
-                        <a class='btn btn-danger btn sm' href='/AfricanDream/deleteUser.php?id=$row[id]'>Edit</a>
+                        <a class='btn btn-danger btn sm' href='/AfricanDream/deleteUser.php?id=$row[id]'>Delete</a>
                     </td>
                 </tr>
                     ";
