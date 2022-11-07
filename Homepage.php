@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["uid"])) {
+    
+    $mysqli = require __DIR__ . "/db.php";
+    
+    $sql = "SELECT * FROM user
+            WHERE user_id = {$_SESSION["user_id"]}";
+            
+    $result = $mysqli->query($sql);
+    
+    $user = $result->fetch_assoc();
+}
+
+?>
 <!DOCTYPE html>
 <html>
 	
@@ -21,6 +38,7 @@
 
 	
 <body>
+
 	
 
 	 <!--Sidebarr-->
@@ -35,6 +53,9 @@
 	<a href="About Us.php">About Us</a>
 	<a href="Contact Us.php">Contact Us</a>
 	<a href="#reviews">Reviews</a>
+	<a href="login.php">Log in</a> 
+	<a href="Signup.php">sign up</a>
+	<a href="logout.php">Log out</a>
   </div>
 
 	 <!-- Page Content -->
@@ -43,6 +64,17 @@
 		
 		
 		<h1 class="title"><span>Who Are We</span></h1>
+		<?php if (isset($user)): ?>
+        
+		<p>Hello <?= htmlspecialchars($user["user_id"]) ?></p>
+		
+			
+			
+		<?php else: ?>
+			
+			
+			
+		<?php endif; ?>
 		<p>African Dream was established in 2000 to
 			make a difference in economic development of
 			Limpopo. African Dream is a black owned entity,
