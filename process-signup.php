@@ -10,6 +10,7 @@ if ( ! filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     die("Valid email is required");
 }
 
+
 if (empty($_POST["address"])) {
     die("Address is required");
 }
@@ -34,7 +35,7 @@ $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 $mysqli = require __DIR__ . "/db.php";
 
-$sql = "INSERT INTO user (user_id, email, name, address, password_hash)
+$sql = "INSERT INTO user (user_id, email, name, address, password)
         VALUES (?, ?, ?, ?, ?)";
         
 $stmt = $mysqli->stmt_init();
@@ -43,8 +44,8 @@ if ( ! $stmt->prepare($sql)) {
     die("SQL error: " . $mysqli->error);
 }
 
-$stmt->bind_param("sss",
-$_POST["user_id"],
+$stmt->bind_param("sssss",
+$_POST["uid"],
 $_POST["email"],
                   $_POST["name"],
                   $_POST["address"],

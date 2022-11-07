@@ -16,7 +16,7 @@ if(@mysqli_connect_errno()){
     exit();
 }
 
-if($result = mysqli_query($mysqli,"SHOW TABLES FROM user LIKE '%us%'")){
+if($result = mysqli_query($mysqli,"SHOW TABLES FROM user LIKE '%user%'")){
     if(mysqli_num_rows($result) == 1){
         echo nl2br("Table user exists\r\n");
     }
@@ -24,7 +24,7 @@ if($result = mysqli_query($mysqli,"SHOW TABLES FROM user LIKE '%us%'")){
     echo nl2br("Table user does not exist\r\n");
 }
 
-$query = 'DROP TABLE IF EXISTS `login`';
+$query = 'DROP TABLE IF EXISTS `user`';
 if(mysqli_query($mysqli,$query)){
     echo nl2br("Table user has been deleted.\r\n");
 }else{
@@ -32,12 +32,13 @@ if(mysqli_query($mysqli,$query)){
 }
 
 $query = "CREATE TABLE user(
+    id INT NOT NULL AUTO_INCREMENT,
     user_id VARCHAR(50) NOT NULL,
     email VARCHAR(255) NOT NULL,
     name VARCHAR(100) NOT NULL,
     address VARCHAR(200) NOT NULL,
     password VARCHAR(255) NOT NULL, 
-    CONSTRAINT PK_user_id PRIMARY KEY(user_id)
+    CONSTRAINT PK_id PRIMARY KEY(id)
 )";
 
 if(mysqli_query($mysqli,$query)){
