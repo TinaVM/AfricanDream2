@@ -4,7 +4,7 @@ $is_invalid = false;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    $mysqli = require __DIR__ . "/database.php";
+    $mysqli = require __DIR__ . "/db.php";
     
     $sql = sprintf("SELECT * FROM user
                     WHERE email = '%s'",
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $_SESSION["user_id"] = $user["id"];
             
-            header("Location: index.php");
+            header("Location: Homepage.php");
             exit;
         }
     }
