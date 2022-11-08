@@ -30,6 +30,11 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $sql = "SELECT * FROM user WHERE id=$id";
     $result = $connection->query($sql);
     $row = $result->fetch_assoc();
+
+    if(!$row){
+        header("location: /AfricanDream/adminUsers.php");
+        exit;
+    }
 }else{
     //post method : update the data of the user
 }
