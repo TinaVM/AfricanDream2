@@ -1,4 +1,14 @@
 <?php 
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "african";
+
+
+//creating connection
+$connection = new mysqli($servername,$username,$password,$database);
+
 $uid = "";
 $email = "";
 $name = "";
@@ -22,6 +32,15 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         }
 
         //add new user to database
+        $sql = "INSERT INTO user(user_id,email,name,address,password)" . 
+        "VALUES('$uid','$email','$name','$address','$password')";
+        $result = $connection->query($sql);
+
+        if(!$result){
+            $errorMessage = "Invalid query: ". $connection->error;
+            break;
+        }
+
         $uid = "";
 $email = "";
 $name = "";
