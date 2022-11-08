@@ -35,8 +35,45 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         header("location: /AfricanDream/adminUsers.php");
         exit;
     }
+
+    $uid = $_POST["uid"];
+    $email = $_POST["email"];
+    $name = $_POST["name"];
+    $address = $_POST["address"];
+    $password = $_POST["password"];
 }else{
     //post method : update the data of the user
+    $id = $_POST["id"];
+    $uid = $_POST["uid"];
+    $email = $_POST["email"];
+    $name = $_POST["name"];
+    $address = $_POST["address"];
+    $password = $_POST["password"];
+
+    do{
+        if(empty($id) || empty($uid) || empty($email) || empty($name) || empty($address) || empty($password)){
+            $errorMessage = "All the fields are required";
+            break;
+        }
+
+        //update new user to database
+        $sql = "UPDATE  user" . 
+        "SET user_id = '$uid', email = '$email', name = '$name', address = '$address', password = '$password'" . 
+        "WHERE id = $id";
+        $result = $connection->query($sql);
+        
+
+
+        if(!$result){
+            $errorMessage = "Invalid query: ". $connection->error;
+            break;
+        }
+
+        $successMessage = "Client updated correctly";
+
+        header("location: /AfricanDream/adminUsers.php");
+        exit;
+    }while(false);
 }
 ?>
 
