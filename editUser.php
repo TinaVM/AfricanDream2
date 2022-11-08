@@ -57,9 +57,9 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         }
 
         //update new user to database
-        $sql = "UPDATE  user" . 
-        "SET user_id = '$uid', email = '$email', name = '$name', address = '$address', password = '$password'" . 
-        "WHERE id = $id";
+        $sql = "UPDATE user
+        SET user_id = '".$uid."', email = '".$email."', name = '".$name."', address = '".$address."', password = '".$password."' 
+        WHERE id = '".$id."'";
         $result = $connection->query($sql);
         
 
