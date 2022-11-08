@@ -5,12 +5,21 @@ $name = "";
 $address = "";
 $password = "";
 
+$errorMessage = "";
+
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $uid = $_POST["uid"];
     $email = $_POST["email"];
     $name = $_POST["name"];
     $address = $_POST["address"];
     $password = $_POST["password"];
+
+    do{
+        if(empty($uid) || empty($email) || empty($name) || empty($address) || empty($password)){
+            $errorMessage = "All the fields are required";
+            break;
+        }
+    }while(false);
 }
 ?>
 
