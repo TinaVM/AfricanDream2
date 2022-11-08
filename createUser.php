@@ -49,6 +49,9 @@ $password = "";
 
 $successMessage = "User added correctly";
 
+header("location: /AfricanDream/addUser.php");
+exit;
+
     }while(false);
 }
 ?>
