@@ -6,6 +6,7 @@ $address = "";
 $password = "";
 
 $errorMessage = "";
+$successMessage = "";
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $uid = $_POST["uid"];
@@ -19,6 +20,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
             $errorMessage = "All the fields are required";
             break;
         }
+
+        //add new user to database
+        $uid = "";
+$email = "";
+$name = "";
+$address = "";
+$password = "";
+
+$successMessage = "User added correctly";
+
     }while(false);
 }
 ?>
@@ -35,6 +46,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 <body>
     <div class="container my-5">
         <h2>New User</h2>
+
+        <?php
+            if(!empty($errorMessage)){
+                echo "
+                <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+                    <strong>$errorMessage</strong>
+                    <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+                </div>    
+                ";
+            }
+        ?>
         <form method="POST">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">User ID</label>
