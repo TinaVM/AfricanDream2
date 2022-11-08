@@ -35,12 +35,12 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         header("location: /AfricanDream/adminUsers.php");
         exit;
     }
-
-    $uid = $_POST["uid"];
-    $email = $_POST["email"];
-    $name = $_POST["name"];
-    $address = $_POST["address"];
-    $password = $_POST["password"];
+    //reading the rows from the database and its columns
+    $uid = $row["user_id"];
+    $email = $row["email"];
+    $name = $row["name"];
+    $address = $row["address"];
+    $password = $row["password"];
 }else{
     //post method : update the data of the user
     $id = $_POST["id"];
@@ -102,7 +102,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
             }
         ?>
         <form method="POST">
-            <input type="hidden" value="<?php echo $id; ?>">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">User ID</label>
                 <div class="col-sm-6">
