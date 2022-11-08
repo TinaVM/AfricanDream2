@@ -49,7 +49,7 @@ $password = "";
 
 $successMessage = "User added correctly";
 
-header("location: /AfricanDream/addUser.php");
+header("location: /AfricanDream/adminUsers.php");
 exit;
 
     }while(false);
