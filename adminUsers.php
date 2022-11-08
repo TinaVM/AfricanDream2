@@ -10,7 +10,7 @@
 <body>
     <div class="container my-5">
         <h2>List of Users</h2>
-        <a class="btn btn-primary" href="/AfricanDream/create.php" role="button">New User</a>
+        <a class="btn btn-primary" href="/AfricanDream/createUser.php" role="button">New User</a>
         <br>
         <table class="table">
             <thead>
