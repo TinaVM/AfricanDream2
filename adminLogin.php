@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             $_SESSION["user_id"] = $user["user_id"];
             
-            header("Location: Homepage.php");
+            header("Location: adminUsers.php");
             exit;
         }
     }
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </head>
 <body>
     
-    <h1>Login</h1>
+    <h1>Admin Login</h1>
     
     <?php if ($is_invalid): ?>
         <em>Invalid login</em>
@@ -60,8 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         
         <button>Log in</button>
     </form>
-    <br>
-    <button><a href="adminLogin.php">Admin Login</a></button>
+    
     
 </body>
 </html>

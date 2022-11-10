@@ -9,7 +9,7 @@
 </head>
 <body>
     
-    <h1>Signup</h1>
+    <h1>Admin Signup</h1>
     
     <form action="process-signup.php" method="post" id="Signup" novalidate>
         <div>
@@ -42,8 +42,6 @@
         
         <button>Sign up</button>
     </form>
-    <br>
-    <button><a href="adminSignUp.php">Admin SignUp</a></button>
     
 </body>
 </html>
