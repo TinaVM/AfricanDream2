@@ -11,6 +11,7 @@
     <div class="container my-5">
         <h2>List of Users</h2>
         <a class="btn btn-primary" href="/AfricanDream/createUser.php" role="button">New User</a>
+        <a class="btn btn-danger" href="adminLogout.php">Log out</a>
         <br>
         <table class="table">
             <thead>
