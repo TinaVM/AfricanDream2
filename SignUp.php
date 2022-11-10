@@ -13,7 +13,8 @@
     
     <form action="process-signup.php" method="post" id="Signup" novalidate>
         <div>
-            <label for="uid">User ID</label>
+            <label for="uid">User ID</label><br>
+            <p>Combination example : AD00500</p>
             <input type="text" id="uid" name="uid">
         </div>
         <div>
